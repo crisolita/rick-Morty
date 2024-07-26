@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+
+model status_type {
+  Id Int @id
+  category CATEGORY
+  duration Float?
+  status STATUS 
+}
+model appearances {
+  id Int @id
+  type TYPES
+  character_id Int 
+  init_time DateTime
+  finish_time DateTime
+}
+model status_asociated {
+  id Int @id
+  category CATEGORY
+  allStatus STATUS[]
+}
+model subcategories {
+id Int @id
+category CATEGORY
+subcategories String[]
+
+}
+enum TYPES {
+CHARACTER
+  EPISODES
+}
+
+enum CATEGORY {
+  SPECIES
+  SEASON
+}
+enum STATUS {
+  ACTIVE
+  CANCELLED
+  SUSPENDED
+}

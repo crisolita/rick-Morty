@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "outDir": "dist",
+    "strict": true,
+    "lib": ["esnext"],
+    "esModuleInterop": true,
+    "types": ["./index","jest"],
+    "experimentalDecorators": true, // Añade esta línea
+    "emitDecoratorMetadata": true, // Añade esta línea
+    "target": "ES6",
+    "module": "CommonJS",
+  }
+}
